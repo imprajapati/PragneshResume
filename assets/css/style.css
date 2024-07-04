@@ -9,6 +9,75 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+
+.Btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition-duration: .3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+  background-color: rgb(255, 65, 65);
+}
+
+/* plus sign */
+.sign {
+  width: 100%;
+  transition-duration: .3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .sign svg {
+  width: 17px;
+} */
+
+.sign svg path {
+  fill: white;
+}
+/* text */
+.text {
+  position: absolute;
+  right: 0%;
+  width: 0%;
+  opacity: 0;
+  color: white;
+  font-size: 0.95em;
+  font-weight: 600;
+  transition-duration: .3s;
+}
+/* hover effect on button width */
+.Btn:hover {
+  width: 145px;
+  border-radius: 40px;
+  transition-duration: .3s;
+}
+
+.Btn:hover .sign {
+  width: 30%;
+  transition-duration: .3s;
+  padding-left: 20px;
+}
+/* hover effect button's text */
+.Btn:hover .text {
+  opacity: 1;
+  width: 70%;
+  transition-duration: .3s;
+  padding-left: 15px;
+  padding-right: 10px;
+}
+/* button click effect*/
+.Btn:active {
+  transform: translate(2px ,2px);
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   color: #272829;
@@ -618,7 +687,19 @@ section {
   position: absolute;
   transition: all ease-in-out 0.3s;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  text-align: center;
+}
+
+.portfolio .portfolio-wrap .portfolio-links p {
+  margin: 0;
+  padding: 18px;
+  /* background: rgba(20, 157, 221, 0.75); */
+  color: black;
+  font-size: 14px;
+  transition: 0.3s;
 }
 
 .portfolio .portfolio-wrap .portfolio-links a {
@@ -634,10 +715,6 @@ section {
   background: rgba(20, 157, 221, 0.95);
 }
 
-.portfolio .portfolio-wrap .portfolio-links a+a {
-  border-left: 1px solid #37b3ed;
-}
-
 .portfolio .portfolio-wrap:hover::before {
   top: 0;
   left: 0;
@@ -650,6 +727,7 @@ section {
   opacity: 1;
   bottom: 0;
 }
+
 
 /*--------------------------------------------------------------
 # Portfolio Details
